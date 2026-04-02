@@ -1,24 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import { IntegrationAnnotation } from './IntegrationAnnotation';
 import { ReviewModal } from './ReviewModal';
-import { supabase } from '../../lib/supabaseClient';
 
 export function ReviewsSection() {
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
-  const [fetchedReviews, setFetchedReviews] = useState<any[]>([]);
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      const { data } = await supabase.from('reviews').select('*').gte('rating', 4).order('id', { ascending: false });
-      if (data) {
-        setFetchedReviews(data);
-      }
-    };
-    fetchReviews();
-  }, [isReviewModalOpen]); // Refresh when modal closes
 
   const hardcodedReviews = [
     {
@@ -47,7 +35,7 @@ export function ReviewsSection() {
     },
   ];
 
-  const allReviews = fetchedReviews.length > 0 ? [...fetchedReviews, ...hardcodedReviews] : hardcodedReviews;
+  const allReviews = hardcodedReviews;
 
   const handlePrev = () => {
     setCurrentReview((prev) => (prev - 1 + allReviews.length) % allReviews.length);
@@ -57,7 +45,7 @@ export function ReviewsSection() {
     setCurrentReview((prev) => (prev + 1) % allReviews.length);
   };
 
-  const review = allReviews[currentReview] || hardcodedReviews[0];
+  const review = allReviews[currentReview];
 
   return (
     <section className="px-6 lg:px-12 py-16 lg:py-24" style={{ backgroundColor: '#F7F5F4' }}>

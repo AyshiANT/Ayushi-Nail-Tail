@@ -3,7 +3,6 @@ import { X, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { supabase } from '../../lib/supabaseClient';
 
 interface ReviewModalProps {
   isOpen: boolean;
@@ -24,8 +23,8 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from('reviews').insert([{ name, service, rating, text }]);
-      if (error) throw error;
+      // Simulate submission network delay
+      await new Promise(resolve => setTimeout(resolve, 800));
 
       alert('Thank you for your review!');
       onClose();

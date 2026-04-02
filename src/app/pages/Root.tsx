@@ -1,17 +1,12 @@
-import { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
-import { BookingModal } from '../components/BookingModal';
 
 export function Root() {
   const navigate = useNavigate();
-  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState<string>();
 
   const handleBookingClick = (serviceName?: string) => {
-    setSelectedService(serviceName);
-    setIsBookingModalOpen(true);
+    window.open('https://forms.gle/Nz8qPF6Sp8Ah7N648', '_blank');
   };
 
   const handleContactClick = () => {
@@ -34,12 +29,6 @@ export function Root() {
       </main>
       
       <Footer />
-      
-      <BookingModal 
-        isOpen={isBookingModalOpen}
-        onClose={() => setIsBookingModalOpen(false)}
-        selectedService={selectedService}
-      />
     </div>
   );
 }
