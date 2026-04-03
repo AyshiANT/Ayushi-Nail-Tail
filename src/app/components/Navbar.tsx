@@ -67,16 +67,43 @@ export function Navbar({ onBookingClick, onContactClick }: NavbarProps) {
               </button>
             </div>
 
-            <div className="flex-1 p-6 space-y-4">
+            <div className="flex-1 p-6 flex flex-col gap-2">
+              <Link
+                to="/"
+                onClick={() => setIsSidebarOpen(false)}
+                className="w-full text-left p-3 rounded-lg hover:bg-black/5 transition-colors text-lg"
+                style={{ color: '#1A1A1A' }}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                onClick={() => setIsSidebarOpen(false)}
+                className="w-full text-left p-3 rounded-lg hover:bg-black/5 transition-colors text-lg"
+                style={{ color: '#1A1A1A' }}
+              >
+                About
+              </Link>
+              <Link
+                to="/services"
+                onClick={() => setIsSidebarOpen(false)}
+                className="w-full text-left p-3 rounded-lg hover:bg-black/5 transition-colors text-lg"
+                style={{ color: '#1A1A1A' }}
+              >
+                Services
+              </Link>
+
+              <div className="my-2 border-t border-[#E5E5E5]" />
+
               <button
                 onClick={() => {
                   setIsSidebarOpen(false);
                   onBookingClick();
                 }}
-                className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-black/5 transition-colors"
+                className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-black/5 transition-colors text-left"
               >
                 <Calendar className="w-5 h-5" style={{ color: '#7A2E2E' }} />
-                <span style={{ color: '#1A1A1A' }}>Book Appointment</span>
+                <span className="text-lg" style={{ color: '#1A1A1A' }}>Book Appointment</span>
               </button>
             </div>
           </div>

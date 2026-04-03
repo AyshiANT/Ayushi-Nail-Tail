@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -43,25 +43,22 @@ export function Footer() {
             <h3 className="text-white mb-4">Connect With Us</h3>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61584798159820"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
                 style={{ backgroundColor: '#7A2E2E' }}
               >
                 <Facebook className="w-5 h-5 text-white" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/ayushisnailtale/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
                 style={{ backgroundColor: '#7A2E2E' }}
               >
                 <Instagram className="w-5 h-5 text-white" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
-                style={{ backgroundColor: '#7A2E2E' }}
-              >
-                <Twitter className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>
