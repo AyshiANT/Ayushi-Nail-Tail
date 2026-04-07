@@ -48,17 +48,24 @@ export function ContactSection() {
                 {info.title}
               </h3>
               {info.link ? (
-                <a href={info.link} target="_blank" rel="noopener noreferrer" className="text-sm mb-1 hover:underline block" style={{ color: '#6B6B6B' }}>
-                  {info.details}
+                <a href={info.link} target="_blank" rel="noopener noreferrer" className="block hover:opacity-80 transition-opacity">
+                  <p className="text-sm mb-1" style={{ color: '#6B6B6B' }}>
+                    {info.details}
+                  </p>
+                  <p className="text-xs mt-1 underline" style={{ color: '#A06A6A' }}>
+                    {info.subDetails}
+                  </p>
                 </a>
               ) : (
-                <p className="text-sm mb-1" style={{ color: '#6B6B6B' }}>
-                  {info.details}
-                </p>
+                <>
+                  <p className="text-sm mb-1" style={{ color: '#6B6B6B' }}>
+                    {info.details}
+                  </p>
+                  <p className="text-xs mt-1" style={{ color: '#A06A6A' }}>
+                    {info.subDetails}
+                  </p>
+                </>
               )}
-              <p className="text-xs mt-1" style={{ color: '#A06A6A' }}>
-                {info.subDetails}
-              </p>
             </div>
           ))}
         </div>
