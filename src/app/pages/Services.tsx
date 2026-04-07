@@ -204,8 +204,7 @@ export function Services() {
                 What to Expect
               </h3>
               <p>
-                All our services begin with a consultation to understand your preferences and needs. 
-                We use only premium products and maintain the highest standards of hygiene and sanitation.
+                Every nail service begins with a personalized consultation to understand your style and preferences. We use premium-quality products and follow strict hygiene standards to ensure a safe, flawless, and long-lasting nail experience.
               </p>
             </div>
             
@@ -214,18 +213,16 @@ export function Services() {
                 Booking & Cancellation
               </h3>
               <p>
-                We recommend booking in advance to secure your preferred time. Cancellations must be 
-                made at least 24 hours prior to your appointment to avoid a cancellation fee.
+                Advance booking is recommended to secure your preferred time slot. Cancellations should be made at least 24 hours prior to avoid any inconvenience and ensure smooth scheduling of nail services.
               </p>
             </div>
             
             <div className="p-6 rounded-xl" style={{ backgroundColor: 'white' }}>
               <h3 className="text-xl mb-3" style={{ color: '#1A1A1A' }}>
-                Gift Certificates
+                Gift & Referral Benefits
               </h3>
               <p>
-                Treat someone special to a luxurious nail experience. Gift certificates are available 
-                for all services and can be purchased in-store or by phone.
+                Gift your loved ones a premium nail experience with our services. Refer a friend and enjoy 10% off on your next booking when they book with us.
               </p>
             </div>
           </div>
