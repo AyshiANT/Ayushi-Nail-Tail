@@ -38,7 +38,7 @@ export function About() {
       <section className="px-6 lg:px-12 py-20 lg:py-32" style={{ backgroundColor: '#EAD7D3' }}>
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl lg:text-6xl mb-6" style={{ color: '#1A1A1A' }}>
-            About Ayushi Nail Tail
+            About Ayushi's Nail Tales
           </h1>
           <p className="text-lg lg:text-xl mb-8" style={{ color: '#6B6B6B' }}>
             Where artistry meets luxury in every nail design

@@ -17,8 +17,8 @@ export function Navbar({ onBookingClick, onContactClick }: NavbarProps) {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <img src="/logo%20without%20background.png" alt="Ayushi Nail Tail Logo" className="h-10 w-auto scale-[1.8] origin-left" />
-            <span className="text-xl font-medium ml-6" style={{ color: '#1A1A1A' }}>Ayushi Nail Tail</span>
+            <img src="/logo%20without%20background.png" alt="Ayushi's Nail Tales Logo" className="h-10 w-auto scale-[1.8] origin-left" />
+            <span className="text-xl font-medium ml-6" style={{ color: '#1A1A1A' }}>Ayushi's Nail Tales</span>
           </div>
 
           {/* Center Navigation - Desktop */}

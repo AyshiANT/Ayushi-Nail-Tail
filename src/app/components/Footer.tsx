@@ -1,5 +1,7 @@
 import { Facebook, Instagram } from 'lucide-react';
 
+import { Link } from 'react-router';
+
 export function Footer() {
   return (
     <footer className="px-6 lg:px-12 py-12" style={{ backgroundColor: '#1A1A1A' }}>
@@ -8,8 +10,8 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="/logo%20without%20background.png" alt="Ayushi Nail Tail Logo" className="h-10 w-auto scale-[1.8] origin-left" />
-              <span className="text-xl text-white ml-6">Ayushi Nail Tail</span>
+              <img src="/logo%20without%20background.png" alt="Ayushi's Nail Tales Logo" className="h-10 w-auto scale-[1.8] origin-left" />
+              <span className="text-xl text-white ml-6">Ayushi's Nail Tales</span>
             </div>
             <p className="text-sm ml-2" style={{ color: '#A0A0A0' }}>
               Time to treat yourself.<br />Book a Session.
@@ -20,10 +22,10 @@ export function Footer() {
           <div>
             <h3 className="text-white mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#home" className="hover:opacity-70 transition-opacity" style={{ color: '#A0A0A0' }}>Home</a></li>
-              <li><a href="#about" className="hover:opacity-70 transition-opacity" style={{ color: '#A0A0A0' }}>About</a></li>
-              <li><a href="#services" className="hover:opacity-70 transition-opacity" style={{ color: '#A0A0A0' }}>Services</a></li>
-              <li><a href="#contact" className="hover:opacity-70 transition-opacity" style={{ color: '#A0A0A0' }}>Contact</a></li>
+              <li><Link to="/" className="hover:opacity-70 transition-opacity" style={{ color: '#A0A0A0' }}>Home</Link></li>
+              <li><Link to="/about" className="hover:opacity-70 transition-opacity" style={{ color: '#A0A0A0' }}>About</Link></li>
+              <li><Link to="/services" className="hover:opacity-70 transition-opacity" style={{ color: '#A0A0A0' }}>Services</Link></li>
+              <li><a href="/#contact" className="hover:opacity-70 transition-opacity block" style={{ color: '#A0A0A0' }}>Contact</a></li>
             </ul>
           </div>
 
@@ -31,10 +33,10 @@ export function Footer() {
           <div>
             <h3 className="text-white mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li><span style={{ color: '#A0A0A0' }}>Classic Manicure</span></li>
-              <li><span style={{ color: '#A0A0A0' }}>Gel Nails</span></li>
-              <li><span style={{ color: '#A0A0A0' }}>Acrylic Extensions</span></li>
-              <li><span style={{ color: '#A0A0A0' }}>Nail Art Design</span></li>
+              <li><Link to="/services" className="hover:opacity-70 transition-opacity block" style={{ color: '#A0A0A0' }}>Classic Manicure</Link></li>
+              <li><Link to="/services" className="hover:opacity-70 transition-opacity block" style={{ color: '#A0A0A0' }}>Gel Nails</Link></li>
+              <li><Link to="/services" className="hover:opacity-70 transition-opacity block" style={{ color: '#A0A0A0' }}>Acrylic Extensions</Link></li>
+              <li><Link to="/services" className="hover:opacity-70 transition-opacity block" style={{ color: '#A0A0A0' }}>Nail Art Design</Link></li>
             </ul>
           </div>
 
@@ -65,9 +67,9 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t text-center" style={{ borderColor: '#333' }}>
-          <p className="text-sm" style={{ color: '#A0A0A0' }}>
-            © 2026 Ayushi Nail Tail. All rights reserved.
-          </p>
+          <div className="text-center text-sm" style={{ color: '#A06A6A' }}>
+            © 2026 Ayushi's Nail Tales. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>

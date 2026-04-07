@@ -53,7 +53,7 @@ export function HeroSection({ onBookingClick, onDiscoverClick }: HeroSectionProp
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
                 src="/logo%20without%20background.png" 
-                alt="Ayushi Nail Tail Logo" 
+                alt="Ayushi's Nail Tales Logo" 
                 className="w-72 md:w-[28rem] lg:w-[32rem] h-auto object-contain -ml-4 -mb-12 md:-mb-24 relative z-10" 
               />
               <h1 className="text-4xl lg:text-6xl leading-tight relative" style={{ color: '#1A1A1A' }}>
