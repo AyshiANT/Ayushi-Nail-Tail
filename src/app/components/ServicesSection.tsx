@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { Link } from 'react-router';
@@ -52,24 +53,36 @@ export function ServicesSection({ onBookService }: ServicesSectionProps) {
     <section id="services" className="px-6 lg:px-12 py-16 lg:py-24" style={{ backgroundColor: '#F7F5F4' }}>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-5xl mb-4" style={{ color: '#1A1A1A' }}>
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-3xl lg:text-5xl mb-4" 
+            style={{ color: '#1A1A1A' }}
+          >
             Discover Our Services
-          </h2>
+          </motion.h2>
         </div>
 
         {/* Service Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {visibleServices.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+              whileHover={{ y: -8 }}
+              className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
               style={{ backgroundColor: 'white' }}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
               </div>
               <div className="p-6">
@@ -81,13 +94,13 @@ export function ServicesSection({ onBookService }: ServicesSectionProps) {
                 </p>
                 <Button
                   onClick={() => onBookService(service.name)}
-                  className="w-full text-white"
+                  className="w-full text-white shadow-md hover:shadow-lg transition-all active:scale-95"
                   style={{ backgroundColor: '#7A2E2E' }}
                 >
                   Book it now
                 </Button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

@@ -1,24 +1,25 @@
-import { MapPin, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock } from 'lucide-react';
 
 export function ContactSection() {
   const contactInfo = [
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: '123 Beauty Lane, Fashion District',
-      subDetails: 'New York, NY 10001',
+      details: 'Salt Lake, Kolkata',
+      subDetails: '',
     },
     {
-      icon: Mail,
-      title: 'Email Us',
-      details: 'hello@nailstudio.com',
-      subDetails: 'We reply within 24 hours',
+      icon: Phone,
+      title: 'Contact Us',
+      details: '+91 9635780557',
+      subDetails: 'Chat with us on WhatsApp',
+      link: 'https://wa.me/919635780557'
     },
     {
       icon: Clock,
       title: 'Opening Hours',
-      details: 'Monday - Saturday',
-      subDetails: '9:00 AM - 8:00 PM',
+      details: 'Available all week',
+      subDetails: 'Bookings accepted until 6 PM only',
     },
   ];
 
@@ -46,10 +47,16 @@ export function ContactSection() {
               <h3 className="text-lg mb-2" style={{ color: '#1A1A1A' }}>
                 {info.title}
               </h3>
-              <p className="text-sm mb-1" style={{ color: '#6B6B6B' }}>
-                {info.details}
-              </p>
-              <p className="text-xs" style={{ color: '#A06A6A' }}>
+              {info.link ? (
+                <a href={info.link} target="_blank" rel="noopener noreferrer" className="text-sm mb-1 hover:underline block" style={{ color: '#6B6B6B' }}>
+                  {info.details}
+                </a>
+              ) : (
+                <p className="text-sm mb-1" style={{ color: '#6B6B6B' }}>
+                  {info.details}
+                </p>
+              )}
+              <p className="text-xs mt-1" style={{ color: '#A06A6A' }}>
                 {info.subDetails}
               </p>
             </div>

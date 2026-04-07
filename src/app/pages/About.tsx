@@ -12,23 +12,23 @@ export function About() {
   const values = [
     {
       icon: Heart,
-      title: 'Passion for Beauty',
-      description: 'We believe in enhancing natural beauty with care and dedication to every detail.',
-    },
-    {
-      icon: Award,
-      title: 'Excellence',
-      description: 'Our team is trained in the latest techniques and uses only premium products.',
+      title: 'Passion for Nail Art',
+      description: 'Dedicated to enhancing natural beauty with precision, creativity, and attention to detail.',
     },
     {
       icon: Users,
-      title: 'Client-Centered',
-      description: 'Your satisfaction and comfort are our top priorities in every service we provide.',
+      title: 'Client-Focused Experience',
+      description: 'Personalized nail services designed for your comfort, style, and satisfaction.',
     },
     {
       icon: Sparkles,
-      title: 'Innovation',
-      description: 'We stay ahead of trends to bring you the most modern and stunning nail designs.',
+      title: 'Hygienic & Safe',
+      description: 'Strict hygiene practices and sanitized tools for a clean and safe experience.',
+    },
+    {
+      icon: Award,
+      title: 'Budget-Friendly Luxury',
+      description: 'Affordable nail services that deliver a premium and elegant look.',
     },
   ];
 
@@ -46,28 +46,34 @@ export function About() {
         </div>
       </section>
 
-      {/* Story Section */}
+      {/* Service Information Section */}
       <section className="px-6 lg:px-12 py-16 lg:py-24" style={{ backgroundColor: 'white' }}>
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl lg:text-5xl mb-8 text-center" style={{ color: '#1A1A1A' }}>
-            Our Story
+          <h2 className="text-3xl lg:text-5xl mb-12 text-center" style={{ color: '#1A1A1A' }}>
+            Service Information
           </h2>
-          <div className="space-y-6 text-lg" style={{ color: '#6B6B6B' }}>
-            <p>
-              Founded in 2015, Ayushi Nail Tail began with a simple vision: to create a sanctuary where 
-              beauty, relaxation, and artistry come together. What started as a small boutique salon 
-              has grown into one of the most trusted names in luxury nail care.
-            </p>
-            <p>
-              Our journey has been driven by passion for perfection and dedication to our clients. 
-              Every nail design we create is a reflection of our commitment to excellence and our 
-              belief that beautiful nails can transform how you feel about yourself.
-            </p>
-            <p>
-              Today, we're proud to serve hundreds of satisfied clients who trust us with their 
-              nail care needs. Our team of expert nail artists brings creativity, precision, and 
-              warmth to every appointment, ensuring you leave feeling pampered and confident.
-            </p>
+          
+          <div className="space-y-12">
+            <div>
+              <h3 className="text-2xl mb-4 font-medium" style={{ color: '#1A1A1A' }}>What to Expect</h3>
+              <p className="text-lg leading-relaxed" style={{ color: '#6B6B6B' }}>
+                Every nail service begins with a personalized consultation to understand your style and preferences. We use premium-quality products and follow strict hygiene standards to ensure a safe, flawless, and long-lasting nail experience.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl mb-4 font-medium" style={{ color: '#1A1A1A' }}>Booking & Cancellation</h3>
+              <p className="text-lg leading-relaxed" style={{ color: '#6B6B6B' }}>
+                Advance booking is recommended to secure your preferred time slot. Cancellations should be made at least 24 hours prior to avoid any inconvenience and ensure smooth scheduling of nail services.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl mb-4 font-medium" style={{ color: '#1A1A1A' }}>Gift & Referral Benefits</h3>
+              <p className="text-lg leading-relaxed" style={{ color: '#6B6B6B' }}>
+                Gift your loved ones a premium nail experience with our services. Refer a friend and enjoy 10% off on your next booking when they book with us.
+              </p>
+            </div>
           </div>
         </div>
       </section>

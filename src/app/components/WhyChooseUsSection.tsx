@@ -1,4 +1,4 @@
-import { Sparkles, Award, Clock, Heart } from 'lucide-react';
+import { Sparkles, Banknote, Clock, Home } from 'lucide-react';
 import { Button } from './ui/button';
 
 interface WhyChooseUsSectionProps {
@@ -10,22 +10,22 @@ export function WhyChooseUsSection({ onBookingClick }: WhyChooseUsSectionProps) 
     {
       icon: Sparkles,
       title: 'Premium Quality',
-      description: 'We use only the finest products and latest techniques',
+      description: 'High-quality products and expert techniques for flawless, long-lasting nails.',
     },
     {
-      icon: Award,
-      title: 'Expert Stylists',
-      description: 'Certified professionals with years of experience',
+      icon: Banknote,
+      title: 'Budget-Friendly',
+      description: 'Affordable nail care with a premium experience at your convenience.',
     },
     {
       icon: Clock,
       title: 'Flexible Timing',
-      description: 'Convenient scheduling to fit your busy lifestyle',
+      description: 'Easy and flexible scheduling to fit your routine.',
     },
     {
-      icon: Heart,
-      title: 'Luxury Experience',
-      description: 'Relaxing ambiance and exceptional customer care',
+      icon: Home,
+      title: 'At-Home Services',
+      description: 'Professional nail services delivered at your home for comfort and convenience.',
     },
   ];
 
