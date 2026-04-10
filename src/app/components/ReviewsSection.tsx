@@ -8,28 +8,28 @@ export function ReviewsSection() {
 
   const hardcodedReviews = [
     {
-      name: 'Sarah Johnson',
-      service: 'Gel Nails',
+      name: 'Riya Sharma',
+      service: 'Gel Extensions with French Tips 💅',
       rating: 5,
-      text: 'Absolutely amazing experience! The attention to detail was impeccable and my nails have never looked better. The studio has such a luxurious feel.',
+      text: 'Absolutely loved the gel extensions! The French tips look super clean and classy ✨ Very hygienic setup and precise work. Looks like a high-end salon finish but at a budget-friendly price.',
     },
     {
-      name: 'Emily Chen',
-      service: 'Nail Art Design',
+      name: 'Sohini Banerjee',
+      service: 'Custom Nail Art with Glitter & Stones 💖',
       rating: 5,
-      text: 'The nail artist truly understood my vision and created the most beautiful design. I get compliments everywhere I go!',
+      text: 'Got custom nail art with glitter and stones 💖 The detailing is amazing and done with patience. Booking in advance is a must, but totally worth it!',
     },
     {
-      name: 'Jessica Martinez',
-      service: 'Spa Manicure',
-      rating: 5,
-      text: 'Such a relaxing and pampering experience. The spa manicure was worth every penny. My hands feel so soft and rejuvenated.',
+      name: 'Anindita Roy',
+      service: 'Gel Polish with Ombre Effect ✨',
+      rating: 4,
+      text: 'Went for basic gel polish with ombre effect. Looks really pretty and natural ✨ Slight delay in timing but the final result made up for it.',
     },
     {
-      name: 'Amanda Wilson',
-      service: 'Acrylic Extensions',
-      rating: 5,
-      text: 'Best acrylic extensions I\'ve ever gotten. They look natural, feel comfortable, and last for weeks. Highly recommend!',
+      name: 'Moumita Paul',
+      service: 'Basic Gel Manicure 💅',
+      rating: 4,
+      text: 'Blunt review: went for basic gel manicure — nothing too fancy but clean, neat, and worth the money 💯',
     },
   ];
 
