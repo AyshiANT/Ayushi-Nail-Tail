@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { Button } from './ui/button';
 import { IntegrationAnnotation } from './IntegrationAnnotation';
-import { ReviewModal } from './ReviewModal';
 
 export function ReviewsSection() {
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
 
   const hardcodedReviews = [
     {
@@ -120,32 +118,22 @@ export function ReviewsSection() {
           ))}
         </div>
 
-        {/* All Reviews Button */}
+        {/* Leave Review Button */}
         <div className="text-center flex justify-center gap-4">
-          <Button
-            variant="outline"
-            className="px-8 py-6 text-base"
-            style={{ 
-              borderColor: '#7A2E2E',
-              color: '#7A2E2E'
-            }}
+          <a 
+            href="https://forms.gle/eJCEwKMVZiEN24VH8" 
+            target="_blank" 
+            rel="noopener noreferrer"
           >
-            All Reviews
-          </Button>
-          <Button
-            onClick={() => setIsReviewModalOpen(true)}
-            className="px-8 py-6 text-base text-white"
-            style={{ backgroundColor: '#7A2E2E' }}
-          >
-            Leave a Review
-          </Button>
+            <Button
+              className="px-8 py-6 text-base text-white"
+              style={{ backgroundColor: '#7A2E2E' }}
+            >
+              Leave a Review
+            </Button>
+          </a>
         </div>
       </div>
-
-      <ReviewModal 
-        isOpen={isReviewModalOpen}
-        onClose={() => setIsReviewModalOpen(false)}
-      />
     </section>
   );
 }
