@@ -15,7 +15,7 @@ export function ServicesSection({ onBookService }: ServicesSectionProps) {
     {
       name: 'Nail Shaping + Basic Polish',
       description: 'Nail cutting & shaping, cuticle cleaning, and application of regular nail polish.',
-      image: '/IMG-20260309-WA0002.jpg.jpeg',
+      image: '/InShot_20260209_082508877.jpg.jpeg',
     },
     {
       name: 'Basic Manicure',
@@ -30,12 +30,7 @@ export function ServicesSection({ onBookService }: ServicesSectionProps) {
     {
       name: 'Basic Pedicure',
       description: 'Foot soaking, basic heel cleaning, light scrub, foot massage, and polish.',
-      image: '/InShot_20260209_082508877.jpg.jpeg',
-    },
-    {
-      name: 'Spa Pedicure',
-      description: 'Foot soak, deep heel cleaning, foot mask, and exfoliating scrub for softness.',
-      image: '/file_000000006d8872089b1a4764196c7520.png',
+      image: '/Feets.jpeg',
     },
   ];
 
