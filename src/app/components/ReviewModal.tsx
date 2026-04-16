@@ -12,8 +12,9 @@ interface ReviewModalProps {
 export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
   const [rating, setRating] = useState(5);
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [service, setService] = useState('');
-  const [text, setText] = useState('');
+  const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
@@ -22,19 +23,37 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Simulate submission network delay
-      await new Promise(resolve => setTimeout(resolve, 800));
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbxwLqZZs2lydP6ZNAJbOgT7HGP502DXhzTe-JFRA5XMOM1Ywir0dveWWy7kYo5NRy8Nqw/exec';
 
-      alert('Thank you for your review!');
+    const formData = new FormData();
+    // Google script handles the automatic Date generation
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', message);
+    
+    // In case you want to capture these later in your sheet:
+    formData.append('rating', rating.toString());
+    formData.append('service', service);
+
+    try {
+      await fetch(scriptUrl, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Safely subvert strict CORS checks
+      });
+
+      alert('Thank you for your review! It has been successfully saved to our sheet.');
       onClose();
+      
       // Reset form
       setRating(5);
       setName('');
+      setEmail('');
       setService('');
-      setText('');
+      setMessage('');
     } catch (error: any) {
-      alert('Error submitting review: ' + error.message);
+      alert('Error submitting review. Please try again.');
+      console.error(error);
     } finally {
       setIsSubmitting(false);
     }
@@ -76,7 +95,7 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
           </div>
 
           <div>
-            <Label htmlFor="name">Your Name</Label>
+            <Label htmlFor="name">Name</Label>
             <Input
               id="name"
               type="text"
@@ -84,6 +103,19 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name"
+              className="mt-1"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
               className="mt-1"
             />
           </div>
@@ -107,12 +139,12 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
           </div>
 
           <div>
-            <Label htmlFor="text">Your Review</Label>
+            <Label htmlFor="message">Your Review</Label>
             <textarea
-              id="text"
+              id="message"
               required
-              value={text}
-              onChange={(e) => setText(e.target.value)}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="Tell us about your experience..."
               className="w-full mt-1 px-3 py-2 border rounded-md min-h-[100px] resize-y"
               style={{ borderColor: '#E5E5E5' }}
