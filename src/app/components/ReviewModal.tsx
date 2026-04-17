@@ -23,28 +23,24 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbxwLqZZs2lydP6ZNAJbOgT7HGP502DXhzTe-JFRA5XMOM1Ywir0dveWWy7kYo5NRy8Nqw/exec';
-
-    const formData = new FormData();
-    // Google script handles the automatic Date generation
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('message', message);
-    
-    // In case you want to capture these later in your sheet:
-    formData.append('rating', rating.toString());
-    formData.append('service', service);
-
     try {
-      await fetch(scriptUrl, {
+      // Calls our secure Vercel serverless proxy at /api/submit-review.
+      // The actual Google Apps Script URL is stored only in Vercel's
+      // server-side environment variables and is NEVER sent to the browser.
+      const response = await fetch('/api/submit-review', {
         method: 'POST',
-        body: formData,
-        mode: 'no-cors' // Safely subvert strict CORS checks
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message, rating, service }),
       });
 
-      alert('Thank you for your review! It has been successfully saved to our sheet.');
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || 'Submission failed');
+      }
+
+      alert('Thank you for your review! It has been successfully saved.');
       onClose();
-      
+
       // Reset form
       setRating(5);
       setName('');
@@ -52,8 +48,8 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
       setService('');
       setMessage('');
     } catch (error: any) {
-      alert('Error submitting review. Please try again.');
-      console.error(error);
+      alert(error.message || 'Error submitting review. Please try again.');
+      console.error('Review submission error:', error);
     } finally {
       setIsSubmitting(false);
     }
@@ -85,8 +81,8 @@ export function ReviewModal({ isOpen, onClose }: ReviewModalProps) {
                   onClick={() => setRating(star)}
                   className="hover:scale-110 transition-transform"
                 >
-                  <Star 
-                    className={`w-8 h-8 ${star <= rating ? 'fill-current' : ''}`} 
+                  <Star
+                    className={`w-8 h-8 ${star <= rating ? 'fill-current' : ''}`}
                     style={{ color: star <= rating ? '#7A2E2E' : '#E5E5E5' }}
                   />
                 </button>
